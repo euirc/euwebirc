@@ -183,7 +183,7 @@ qwebirc.ui.StandardUI = new Class({
     if(!x.alt || x.control) {
       if(x.key == "backspace" || x.key == "/")
         if(!this.getInputFocused(x))
-          new Event(x).stop();
+          x.stop();
       return;
     }
     var success = false;
@@ -192,7 +192,7 @@ qwebirc.ui.StandardUI = new Class({
       var highestIndex = -1;
       success = true;
 
-      new Event(x).stop();
+      x.stop();
       for(var i=0;i<this.windowArray.length;i++) {
         var h = this.windowArray[i].hilighted;
         if(h > highestNum) {
@@ -223,7 +223,7 @@ qwebirc.ui.StandardUI = new Class({
       success = true;
     }
     if(success)
-      new Event(x).stop();
+      x.stop();
   },
   getInputFocused: function(x) {
     if($$("input").indexOf(x.target) == -1 && $$("textarea").indexOf(x.target) == -1)

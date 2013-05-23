@@ -37,7 +37,7 @@ qwebirc.ui.urlificate = function(session, element, text) {
     a.href = "#";
     a.addClass("hyperlink-channel");
     a.addEvent("click", function(e) {
-      new Event(e).stop();
+      e.stop();
       if (session.irc)
         session.irc.exec("/JOIN " + newtext);
       else {
@@ -114,9 +114,9 @@ qwebirc.ui.urlificate = function(session, element, text) {
 
     element.appendChild(a);
     if(fn)
-      a.addEvent("click", function(e) { new Event(e).stop(); fn(disptext); });
+      a.addEvent("click", function(e) { e.stop(); fn(disptext); });
     else
-      a.addEvent("click", function(e) { new Event(e).stopPropagation(); });
+      a.addEvent("click", function(e) { e.stopPropagation(); });
 
     return punct;
   };

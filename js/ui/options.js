@@ -144,7 +144,7 @@ qwebirc.options.ColorInput = new Class({
       light_slider.addEvent("change", change_func);
 
       hexform.addEvent("submit", function(e) {
-        (new Event(e)).stop();
+        e.stop();
         var color = new Color(this.hexbox.value)
        hue_slider.set(color.hsb[0]);
         sat_slider.set(color.hsb[1]);
@@ -152,7 +152,7 @@ qwebirc.options.ColorInput = new Class({
       }.bind(this));
 
       reset.addEvent("click", function(e) {
-        (new Event(e)).stop();
+        e.stop();
         this.value = conf[this.option.category][this.option.option + "_default"];
        var color = new Color(this.value)
        hue_slider.set(color.hsb[0]);

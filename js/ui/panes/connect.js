@@ -135,7 +135,7 @@ qwebirc.ui.Panes.Connect.pclass = new Class({
     yes.focus();
 
     form.addEvent("submit", function(e) {
-      new Event(e).stop();
+      e.stop();
       this.connect(null);
     }.bind(this));
 
@@ -269,7 +269,7 @@ qwebirc.ui.Panes.Connect.pclass = new Class({
     var r = createRow(undefined, connbutton);
 
     form.addEvent("submit", function(e) {
-      new Event(e).stop();
+      e.stop();
 
       if(!this.nickBox.value) {
         alert("You must supply a nickname.");

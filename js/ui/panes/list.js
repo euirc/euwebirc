@@ -81,7 +81,7 @@ qwebirc.ui.Panes.List.pclass = new Class({
     /* Add refresh and update filters button. */
     var refresh = new Element("input", {"type": "submit", "value": "Refresh and Apply Filters"});
     refresh.addEvent("click", function(e) {
-      (new Event(e)).stop();
+      e.stop();
       if (nameinput.value != this.namefilter || topicinput.value != this.topicfilter) {
         this.namefilter = nameinput.value;
         this.topicfilter = topicinput.value;
@@ -341,7 +341,7 @@ qwebirc.ui.Panes.List.pclass = new Class({
     var closure = function() {
       var channame = channel.name;
       chanitem.addEvent("click", function(e) {
-        new Event(e).stop();
+        e.stop();
         if (this.session.irc)
           this.session.irc.exec("/JOIN " + channame);
         else {
