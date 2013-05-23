@@ -93,7 +93,7 @@ qwebirc.irc.BaseCommandParser = new Class({
         return;
       }
 
-      var ret = fn.run([args], this);
+      var ret = fn.apply(this, [args]);
       if(ret == undefined)
         return;
 

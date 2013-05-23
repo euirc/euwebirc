@@ -35,7 +35,7 @@ qwebirc.irc.IRCConnection = new Class({
     errorAlert: true,
     serverPassword: null
   },
-  initialize: function(options) {
+  initialize: function(session, options) {
     this.setOptions(options);
     
     this.initialNickname = this.options.initialNickname;
