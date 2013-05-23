@@ -344,7 +344,7 @@ qwebirc.util.invertFn = function(fn) {
 
 qwebirc.util.deviceHasKeyboard = function() {
   var determine = function() {
-    if(Browser.Engine.ipod)
+    if(Browser.Platform.ios)
       return true;
 
     var MOBILE_UAs = ["Nintendo Wii", " PIE", "BlackBerry", "IEMobile", "Windows CE", "Nokia", "Opera Mini", "Mobile", "mobile", "Pocket", "pocket", "Android"];

@@ -3,7 +3,7 @@ qwebirc.ui.supportsFocus = function(session) {
   if(!ua)
     return true;
 
-  if(Browser.Engine.ipod || ua.indexOf("Konqueror") != -1)
+  if(Browser.Platform.ios || ua.indexOf("Konqueror") != -1)
     return false;
 
   return true;
