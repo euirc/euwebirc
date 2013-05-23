@@ -1,6 +1,6 @@
 qwebirc.ui.supportsFocus = function(session) {
   var ua = navigator.userAgent;
-  if(!$defined(ua))
+  if(!ua)
     return true;
 
   if(Browser.Engine.ipod || ua.indexOf("Konqueror") != -1)
@@ -20,20 +20,20 @@ qwebirc.options.Input = new Class({
     this.parentElement = parent;
     this.id = qwebirc.util.generateID();
 
-    if ($defined(this.option.isEnabled))
+    if (this.option.isEnabled)
       this.enabled = this.option.isEnabled(session);
 
     this.render();
   },
   createInput: function(type, parent, name, selected) {
-    if(!$defined(parent))
+    if(!parent)
       parent = this.parentElement;
 
     return qwebirc.util.createInput(type, parent, name, selected, this.id);
   },
   FE: function(element, parent) {
     var n = new Element(element);
-    if(!$defined(parent))
+    if(!parent)
       parent = this.parentElement;
 
     parent.appendChild(n);
@@ -43,7 +43,7 @@ qwebirc.options.Input = new Class({
     this.mainElement.focus();
   },
   onChange: function() {
-    if ($defined(this.option.onChange))
+    if (this.option.onChange)
       this.option.onChange(this.session, this.options, this.get());
   }
 });
@@ -166,7 +166,7 @@ qwebirc.options.ColorInput = new Class({
   },
   onChange: function() {
     this.hexbox.value = this.get();
-    if ($defined(this.option.onChange))
+    if (this.option.onChange)
       this.option.onChange(this.session, this.options, this.get());
   },
   get: function() {
@@ -240,7 +240,7 @@ qwebirc.options.Options = [
     option: "beep_on_mention",
     label: "Beep when nick mentioned or on query activity (requires Flash)",
     isEnabled: function (session) {
-      if(!$defined(Browser.Plugins.Flash) || Browser.Plugins.Flash.version < 8)
+      if(!Browser.Plugins.Flash || Browser.Plugins.Flash.version < 8)
        return false;
       return true;
     },
@@ -321,7 +321,7 @@ qwebirc.options.Options = [
     type: qwebirc.options.ColorInput,
     label: "Adjust background color",
     onChange: function (session, options, value) {
-      if ($defined(options["ui.fg_color"]))
+      if (options["ui.fg_color"])
         ui.setModifiableStylesheetValues(options["ui.fg_color"].get(), options["ui.fg_sec_color"].get(), value);
       else
         ui.setModifiableStylesheetValues(conf.ui.fg_color, conf.ui.fg_sec_color, value);

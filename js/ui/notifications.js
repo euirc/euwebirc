@@ -29,7 +29,7 @@ qwebirc.ui.Beeper = new Class({
   soundInit: function() {
     if(this.soundInited)
       return;
-    if(!$defined(Browser.Plugins.Flash) || Browser.Plugins.Flash.version < 8)
+    if(!Browser.Plugins.Flash || Browser.Plugins.Flash.version < 8)
       return;
     this.soundInited = true;
 
@@ -57,7 +57,7 @@ qwebirc.ui.Flasher = new Class({
     this.titleText = document.title;
 
     var favIcon = this._getFavIcon();
-    if($defined(favIcon)) {
+    if(favIcon) {
       this.favIcon = favIcon;
       this.favIconParent = favIcon.parentNode;
       this.favIconVisible = true;
@@ -105,7 +105,7 @@ qwebirc.ui.Flasher = new Class({
     flashA();
   },
   cancelFlash: function() {
-    if(!this.canFlash || !$defined(this.flasher))
+    if(!this.canFlash || !this.flasher)
       return;
 
     this.flashing = false;

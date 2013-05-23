@@ -70,7 +70,7 @@ qwebirc.irc.IRCConnection = new Class({
 			cookie += base.charAt(Math.floor(Math.random()*base.length));
 		window.localStorage.setItem("euIRCidentCookie", cookie);
 	}
-	if($defined(this.options.serverPassword))
+	if(this.options.serverPassword)
           this.ws.send("PASS "+this.options.serverPassword);
 	this.ws.send("NICK "+this.initialNickname);
 	this.ws.send("cap req multi-prefix");

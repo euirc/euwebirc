@@ -199,9 +199,9 @@ qwebirc.ui.Panes.Connect.pclass = new Class({
       var d2 = new Element("td");
       r.appendChild(d2);
 
-      if($defined(e2))
+      if(e2)
         d2.appendChild(e2);
-      if($defined(style)) {
+      if(style) {
         r.setStyles(style);
         return [r, d2];
       }

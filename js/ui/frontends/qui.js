@@ -9,7 +9,7 @@ qwebirc.ui.QUI = new Class({
     this.qjsui = new qwebirc.ui.QUI.JSUI("qwebirc-qui", this.parentElement);
     this.qjsui.addEvent("reflow", function() {
       var w = this.getActiveWindow();
-      if($defined(w))
+      if(w)
         w.onResize();
     }.bind(this));
     this.qjsui.top.addClass("outertabbar");
@@ -203,7 +203,7 @@ qwebirc.ui.QUI = new Class({
     this.qjsui.middle = this.lines = lines;
   },
   setChannelItems: function(nicklist, topic) {
-    if(!$defined(nicklist)) {
+    if(!nicklist) {
       nicklist = this.orignicklist;
       topic = this.origtopic;
     }
@@ -226,7 +226,7 @@ qwebirc.ui.QUI.JSUI = new Class({
   Implements: [Events],
   initialize: function(class_, parent, sizer) {
     this.parent = parent;
-    this.sizer = $defined(sizer)?sizer:parent;
+    this.sizer = sizer?sizer:parent;
 
     this.class_ = class_;
     this.create();
@@ -455,7 +455,7 @@ qwebirc.ui.QUI.Window = new Class({
       } else {
         this.scrollToBottom();
       }
-    } else if($defined(this.scrollpos)) {
+    } else if(this.scrollpos) {
       if(Browser.Engine.trident) {
         this.getScrollParent().scrollTo(this.scrollpos.x, this.scrollpos.y);
       } else {
@@ -521,7 +521,7 @@ qwebirc.ui.QUI.Window = new Class({
     var span = new Element("span");
     if(conf.ui.nick_colors) {
       var colour = realNick.toHSBColour(this.session);
-      if($defined(colour))
+      if(colour)
         span.setStyle("color", colour.rgbToHex());
     }
     span.set("text", nick);
@@ -578,7 +578,7 @@ qwebirc.ui.QUI.Window = new Class({
     ui.setLines(this.lines);
     ui.setChannelItems(this.nicklist, this.topic);
     ui.qjsui.showInput(inputVisible);
-    ui.qjsui.showChannel($defined(this.nicklist));
+    ui.qjsui.showChannel(this.nicklist);
 
     this.reflow();
 
@@ -595,7 +595,7 @@ qwebirc.ui.QUI.Window = new Class({
         for(var i=0;i<nodes.length;i++) {
           var e = nodes[i], span = e.firstChild;
           var colour = e.realNick.toHSBColour(this.session);
-          if($defined(colour))
+          if(colour)
             span.setStyle("color", colour.rgbToHex());
         };
       } else {

@@ -20,7 +20,7 @@ qwebirc.session = new Class({
 
 		/* Load any Atheme login state. */
 		cookie = new Hash.Cookie("iris-auth");
-		if ($defined(cookie.get("user"))) {
+		if (cookie.get("user")) {
 			this.atheme.user = cookie.get("user");
 			this.atheme.secret = cookie.get("token");
 		}

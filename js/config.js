@@ -24,9 +24,9 @@ qwebirc.config.load = function(config) {
 
 	/* Map backwards compatiblity query string aliases to the
 	 * parameters they represent, unless they're already set. */
-	if($defined(args["nick"]) && !$defined(args["initial_nick"]))
+	if(args["nick"] && !args["initial_nick"])
 		args["initial_nick"] = args["nick"];
-	if($defined(args["channels"]) && !$defined(args["initial_chans"]))
+	if(args["channels"] && !args["initial_chans"])
 		args["initial_chans"] = args["channels"];
 
 	/* If we had any arguments, default chan_list_on_start off. */
@@ -34,27 +34,27 @@ qwebirc.config.load = function(config) {
 		args["chan_list_on_start"] = "0";
 
 	/* Load nick from query string. */
-	if($defined(args["initial_nick"])) {
+	if(args["initial_nick"]) {
 		var initial_nick = args["initial_nick"];
 		config.frontend.initial_nick = initial_nick;
 		config.frontend.chan_prompt = false;
 	}
 
 	/* Load channels from query string. */
-	if($defined(args["url"])) {
+	if(args["url"]) {
 		var urlchans = qwebirc.config.parseIRCURL(args["url"]);
 		if (urlchans) {
 			config.frontend.initial_chans = urlchans;
 			config.frontend.chan_prompt = false;
 		}
 	}
-	if ($defined(args["initial_chans"])) {
+	if (args["initial_chans"]) {
 		var initial_chans = args["initial_chans"];
 		config.frontend.initial_chans = initial_chans;
 	}
 
 	/* Load prompt option from query string. */
-	if ($defined(args["prompt"])) {
+	if (args["prompt"]) {
 		if (args["prompt"] == 1)
 			config.frontend.prompt = true;
 		else
@@ -62,7 +62,7 @@ qwebirc.config.load = function(config) {
 	}
 
 	/* Load chan_prompt option from query string. */
-	if ($defined(args["chan_prompt"])) {
+	if (args["chan_prompt"]) {
 		if (args["chan_prompt"] == 1)
 			config.frontend.chan_prompt = true;
 		else
@@ -70,7 +70,7 @@ qwebirc.config.load = function(config) {
 	}
 
 	/* Load chan_list_on_start option from query string. */
-	if ($defined(args["chan_list_on_start"])) {
+	if (args["chan_list_on_start"]) {
 		if (args["chan_list_on_start"] == 1)
 			config.atheme.chan_list_on_start = true;
 		else
@@ -78,13 +78,13 @@ qwebirc.config.load = function(config) {
 	}
 
 	/* Load colours from query string. */
-	if ($defined(args["fg_color"])) {
+	if (args["fg_color"]) {
 		config.ui.fg_color = args["fg_color"];
 		config.ui.fg_sec_color = args["fg_color"];
 	}
-	if ($defined(args["fg_sec_color"]))
+	if (args["fg_sec_color"])
 		config.ui.fg_sec_color = args["fg_sec_color"];
-	if ($defined(args["bg_color"]))
+	if (args["bg_color"])
 		config.ui.bg_color = args["bg_color"];
 
 	/* Subtitute '.' characters in the nick with random digits. */
@@ -120,7 +120,7 @@ qwebirc.config.loadCookieSettings = function(config) {
 		var category = qwebirc.options.Options[i].category;
 		var option = qwebirc.options.Options[i].option;
 		var cookieName = category + "." + option;
-		if ($defined(cookie.get(cookieName)))
+		if (cookie.get(cookieName))
 			config[category][option] = cookie.get(cookieName);
 	}
 };
@@ -197,7 +197,7 @@ qwebirc.config.parseIRCURL = function(url) {
 		}
 	}
 
-	if($defined(queryArgs)) {
+	if(queryArgs) {
 		for(var key_ in queryArgs) {
 			var value = queryArgs[key_];
 
@@ -211,9 +211,9 @@ qwebirc.config.parseIRCURL = function(url) {
 	}
 
 	if(needkey) {
-		if(!$defined(key))
+		if(!key)
 			key = prompt("Please enter the password for channel " + channel + ":");
-		if($defined(key))
+		if(key)
 			channel = channel + " " + key;
 	}
 

@@ -35,7 +35,7 @@ qwebirc.irc.IRCClient = new Class({
     if(!extra)
       extra = {};
 
-    if($defined(user)) {
+    if(user) {
       extra["n"] = user.hostToNick();
       extra["h"] = user.hostToHost();
     }
@@ -356,7 +356,7 @@ qwebirc.irc.IRCClient = new Class({
   },
   getNickStatus: function(channel, nick) {
     var n = this.tracker.getNickOnChannel(nick, channel);
-    if(!$defined(n))
+    if(!n)
       return "";
 
     if(n.prefixes.length == 0)
@@ -451,14 +451,14 @@ qwebirc.irc.IRCClient = new Class({
   },
   nickOnChanHasPrefix: function(nick, channel, prefix) {
     var entry = this.tracker.getNickOnChannel(nick, channel);
-    if(!$defined(entry))
+    if(!entry)
       return false; /* shouldn't happen */
 
     return entry.prefixes.indexOf(prefix) != -1;
   },
   nickOnChanHasAtLeastPrefix: function(nick, channel, prefix, betterThan) {
     var entry = this.tracker.getNickOnChannel(nick, channel);
-    if(!$defined(entry))
+    if(!entry)
       return false; /* shouldn't happen */
 
     /* this array is sorted */

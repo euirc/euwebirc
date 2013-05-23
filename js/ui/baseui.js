@@ -66,7 +66,7 @@ qwebirc.ui.BaseUI = new Class({
   },
   newWindow: function(type, name) {
     var w = this.getWindow(type, name);
-    if($defined(w))
+    if(w)
       return w;
 
     var wId = this.getWindowIdentifier(type, name);
@@ -130,7 +130,7 @@ qwebirc.ui.BaseUI = new Class({
 
     /* Window cleanup. */
     window.closed = true;
-    if($defined(window.scrolltimer)) {
+    if(window.scrolltimer) {
       $clear(window.scrolltimer);
       window.scrolltimer = null;
     }
@@ -159,7 +159,7 @@ qwebirc.ui.BaseUI = new Class({
 
   focusChange: function(newValue) {
     var window_ = this.getActiveWindow();
-    if($defined(window_))
+    if(window_)
       window_.focusChange(newValue);
   }
 });
@@ -312,7 +312,7 @@ qwebirc.ui.StandardUI = new Class({
     if (fg.hsb[2] > bg.hsb[2])
       multiplier = -1;
 
-    if(!$defined(this.__styleSheet))
+    if(!this.__styleSheet)
       return;
     this.__styleSheet.set(
         function(x) {
@@ -373,7 +373,7 @@ qwebirc.ui.RequestTransformHTML = function(session, options) {
     if(HREF_ELEMENTS[tagName]) {
       var attr = node.getAttribute("transform_attr");
       var value = node.getAttribute("transform_value");
-      if($defined(attr) && $defined(value)) {
+      if(attr && value) {
         node.removeAttribute("transform_attr");
         node.removeAttribute("transform_value");
         node.setAttribute(attr, conf.frontend.static_base_url + value);

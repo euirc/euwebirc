@@ -32,9 +32,9 @@ qwebirc.ui.Panes.Options.pclass = new Class({
       var x = qwebirc.options.Options[i];
 
       var type = qwebirc.options.CheckInput;
-      if ($defined(x.type))
+      if (x.type)
         type = x.type;
-      if (type == qwebirc.options.ColorInput && $defined(x.isEnabled)) {
+      if (type == qwebirc.options.ColorInput && x.isEnabled) {
         if (!x.isEnabled(this.session))
           continue
       }

@@ -127,7 +127,7 @@ qwebirc.irc.IRCTracker = new Class({
   },
   updateLastSpoke: function(nick, channel, time) {
     var nc = this.getNickOnChannel(nick, channel);
-    if($defined(nc))
+    if(nc)
       nc.lastSpoke = time;
   },
   getSortedByLastSpoke: function(channel) {

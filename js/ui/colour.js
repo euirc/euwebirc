@@ -91,7 +91,7 @@ qwebirc.ui.Colourise = function(session, line, entity) {
           var text = emitEndToken();
 
           var c = text.toHSBColour(session);
-          if($defined(c))
+          if(c)
             e.style.color = c.rgbToHex();
           capturingNick = autoNickColour = false;
         }

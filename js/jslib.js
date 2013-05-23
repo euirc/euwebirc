@@ -137,7 +137,7 @@ qwebirc.ui.insertAt = function(position, parent, element) {
 }
 
 qwebirc.util.setCaretPos = function(obj, pos) {
-  if($defined(obj.selectionStart)) {
+  if(obj.selectionStart) {
     obj.focus();
     obj.setSelectionRange(pos, pos);
   } else if(obj.createTextRange) {
@@ -152,7 +152,7 @@ qwebirc.util.setAtEnd = function(obj) {
 }
 
 qwebirc.util.getCaretPos = function(element) {
-  if($defined(element.selectionStart))
+  if(element.selectionStart)
     return element.selectionStart;
 
   if(document.selection) {

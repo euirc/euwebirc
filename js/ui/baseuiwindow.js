@@ -33,7 +33,7 @@ qwebirc.ui.Window = new Class({
     qwebirc.ui.Colourise(this.session, "[" + topic + "]", element);
   },
   subEvent: function(event) {
-    if($defined(this.subWindow))
+    if(this.subWindow)
       this.subWindow.fireEvent(event);
   },
   setSubWindow: function(window) {
@@ -58,7 +58,7 @@ qwebirc.ui.Window = new Class({
     this.subEvent("deselect");
 
     this.setScrollPos();
-    if($defined(this.scrolltimer)) {
+    if(this.scrolltimer) {
       $clear(this.scrolltimer);
       this.scrolltimer = null;
     }
@@ -71,7 +71,7 @@ qwebirc.ui.Window = new Class({
   resetScrollPos: function() {
     if(this.scrolleddown) {
       this.scrollToBottom();
-    } else if($defined(this.scrollpos)) {
+    } else if(this.scrollpos) {
       this.getScrollParent().scrollTo(this.scrollpos.x, this.scrollpos.y);
     }
   },
@@ -150,7 +150,7 @@ qwebirc.ui.Window = new Class({
   getScrollParent: function() {
     var scrollparent = this.lines;
 
-    if($defined(this.scroller))
+    if(this.scroller)
       scrollparent = this.scroller;
     return scrollparent;
   },
@@ -167,7 +167,7 @@ qwebirc.ui.Window = new Class({
     var parent = this.lines;
 
     /* scroll in bursts, else the browser gets really slow */
-    if($defined(element)) {
+    if(element) {
       var sd = this.scrolledDown();
       parent.appendChild(element);
       if(sd) {
