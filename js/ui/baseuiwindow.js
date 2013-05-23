@@ -59,7 +59,7 @@ qwebirc.ui.Window = new Class({
 
     this.setScrollPos();
     if(this.scrolltimer) {
-      $clear(this.scrolltimer);
+      window.clearTimeout(this.scrolltimer);
       this.scrolltimer = null;
     }
 
@@ -172,7 +172,7 @@ qwebirc.ui.Window = new Class({
       parent.appendChild(element);
       if(sd) {
         if(this.scrolltimer)
-          $clear(this.scrolltimer);
+          window.clearTimeout(this.scrolltimer);
         this.scrolltimer = this.scrollAdd.delay(50, this, [null]);
       }
     } else {

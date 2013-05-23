@@ -275,7 +275,7 @@ qwebirc.ui.QUI.JSUI = new Class({
       delay = 1;
 
     if(this.reflowevent)
-      $clear(this.reflowevent);
+      window.clearTimeout(this.reflowevent);
     this.__reflow();
     this.reflowevent = this.__reflow.delay(delay, this);
   },

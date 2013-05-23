@@ -110,7 +110,7 @@ qwebirc.ui.Flasher = new Class({
 
     this.flashing = false;
 
-    $clear(this.flasher);
+    window.clearTimeout(this.flasher);
     this.flasher = null;
 
     this.showFavIcon();

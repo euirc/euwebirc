@@ -131,7 +131,7 @@ qwebirc.ui.BaseUI = new Class({
     /* Window cleanup. */
     window.closed = true;
     if(window.scrolltimer) {
-      $clear(window.scrolltimer);
+      window.clearTimeout(window.scrolltimer);
       window.scrolltimer = null;
     }
 
