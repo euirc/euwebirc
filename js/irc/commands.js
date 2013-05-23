@@ -13,7 +13,7 @@ qwebirc.irc.Commands = new Class({
     };
 
    // Add UI pane commands.
-   $each(qwebirc.ui.Panes, function(pane, name, object) {
+   Object.each(qwebirc.ui.Panes, function(pane, name, object) {
      var command = pane.command(session);
      if (command) {
        this["cmd_" + command] = [false, undefined, undefined, function(args) {

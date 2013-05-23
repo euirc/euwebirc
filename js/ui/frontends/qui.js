@@ -66,7 +66,7 @@ qwebirc.ui.QUI = new Class({
 
     var menuitems = [];
     var i = 0;
-    $each(qwebirc.ui.Panes, function(pane, name, object) {
+    Object.each(qwebirc.ui.Panes, function(pane, name, object) {
       var text = pane.menuitem(this.session);
       if (text) {
         menuitems[i] = {};
