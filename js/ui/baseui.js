@@ -18,7 +18,7 @@ qwebirc.ui.BaseUI = new Class({
 
     this.windowFocused = true;
 
-    if(Browser.Engine.trident) {
+    if(Browser.ie) {
       var checkFocus = function() {
         var hasFocus = document.hasFocus();
         if(hasFocus != this.windowFocused) {
@@ -172,7 +172,7 @@ qwebirc.ui.StandardUI = new Class({
     this.tabCompleter = new qwebirc.ui.TabCompleterFactory(this);
 
     var ev;
-    if(Browser.Engine.trident) {
+    if(Browser.ie) {
       ev = "keydown";
     } else {
       ev = "keypress";

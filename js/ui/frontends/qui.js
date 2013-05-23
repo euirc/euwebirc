@@ -388,7 +388,7 @@ qwebirc.ui.QUI.Window = new Class({
       this.tab.addEvent("mouseup", function(e) {
         var button = 1;
 
-        if(Browser.Engine.trident)
+        if(Browser.ie)
           button = 4;
 
         if(e.event.button == button)
@@ -450,13 +450,13 @@ qwebirc.ui.QUI.Window = new Class({
   },
   onResize: function() {
     if(this.scrolleddown) {
-      if(Browser.Engine.trident) {
+      if(Browser.ie) {
         this.scrollToBottom.delay(5, this);
       } else {
         this.scrollToBottom();
       }
     } else if(this.scrollpos) {
-      if(Browser.Engine.trident) {
+      if(Browser.ie) {
         this.getScrollParent().scrollTo(this.scrollpos.x, this.scrollpos.y);
       } else {
         this.getScrollParent().scrollTo.delay(5, this, [this.scrollpos.x, this.scrollpos.y]);

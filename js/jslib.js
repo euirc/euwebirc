@@ -222,7 +222,7 @@ qwebirc.util.importJS = function(name, watchFor, onload) {
   script.type = "text/javascript";
   script.src = name;
 
-  if(Browser.Engine.trident) {
+  if(Browser.ie) {
     /* HORRID */
     var checkFn = function() {
       if(eval("typeof " + watchFor) != "undefined") {
@@ -240,7 +240,7 @@ qwebirc.util.importJS = function(name, watchFor, onload) {
 
 qwebirc.util.createInput = function(type, parent, name, selected, id) {
   var r;
-  if(Browser.Engine.trident) {
+  if(Browser.ie) {
     if(name) {
       name = " name=\"" + escape(name) + "\"";
     } else {

@@ -104,7 +104,7 @@ qwebirc.options.ColorInput = new Class({
 
     var k = new Element("div");
     k.addClass("knob");
-    if(Browser.Engine.trident) {
+    if(Browser.ie) {
       k.setStyle("top", "0px");
       k.setStyle("background-color", "black");
     }
@@ -114,7 +114,7 @@ qwebirc.options.ColorInput = new Class({
 
     k = new Element("div");
     k.addClass("knob");
-    if(Browser.Engine.trident) {
+    if(Browser.ie) {
       k.setStyle("top", "0px");
       k.setStyle("background-color", "black");
     }
@@ -124,7 +124,7 @@ qwebirc.options.ColorInput = new Class({
 
     k = new Element("div");
     k.addClass("knob");
-    if(Browser.Engine.trident) {
+    if(Browser.ie) {
       k.setStyle("top", "0px");
       k.setStyle("background-color", "black");
     }
