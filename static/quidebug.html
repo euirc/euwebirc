@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <base />
+  <title>euIRCnet Web IRC</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/dev/>
+  <link rel="shortcut icon" type="image/png" href="/dev/images/favicon.png"/dev/>
+  <link rel="stylesheet" href="/dev/css/debug/css/colours.css" type="text/css"/dev/>
+  <link rel="stylesheet" href="/dev/css/debug/css/dialogs.css" type="text/css"/dev/>
+  <script type="text/javascript" src="/dev/js/mootools-core-1.4.5-full-nocompat.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/qwebirc.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/config.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/crypto.js"></script>
+  <script type="text/javascript" src="/dev/js/debug.jslib.js.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/md5.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/session.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/sound.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/version.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/athemequery.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/baseircclient.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/commandhistory.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/commandparser.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/commands.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/ircclient.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/ircconnection.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/irclib.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/irctracker.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/irc/numerics.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/atheme.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/baseui.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/baseuiwindow.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/colour.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/create.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/menuitems.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/notifications.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/options.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/style.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/tabcompleter.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/theme.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/url.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/about.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/connect.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/embed.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/faq.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/feedback.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/list.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/options.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/js/ui/panes/privacypolicy.js"></script>
+  <script type="text/javascript" src="/dev/js/debug/ui/frontends/qui.js"></script>
+
+  <script type="text/javascript">
+    conf = qwebirc.config.load({"ui":{"fg_color":"FFFFFF","fg_sec_color":"E8D032","privacy":false,"nick_status":false,"flash_on_mention":false,"dedicated_msg_window":false,"bg_color":"19456E","dedicated_notice_window":false,"lastpos_line":true,"hide_joinparts":false,"simple_color":false,"beep_on_mention":false,"nick_click_query":false,"nick_colors":false},"atheme":{"sasl_type":"PLAIN","nickserv_login":true,"chan_list_on_start":false,"chan_list_cloud_view":false},"frontend":{"chan_prompt":true,"initial_chans":"","prompt":true,"chan_autoconnect":true,"base_url":"http://217.24.49.42:8042/","dynamic_base_url":"/dev/","app_title":"euIRCnet Web IRC","initial_nick":"","static_base_url":"/dev/","network_name":"euIRCnet"}});
+    qwebirc.ui.create("ircui", qwebirc.ui.QUI);
+  </script>
+</head>
+<body>
+  <div id="ircui">
+    <noscript>
+      <div id="noscript">Javascript is required to use IRC.</div>
+    </noscript>
+  </div>
+</body>
+</html>
