@@ -7,6 +7,14 @@ qwebirc.ui.style.ModifiableStylesheet = new Class({
 
     this.__tag = this.__createTag();
   },
+  loadAdvanced: function(url) {
+    var n = this.__parseStylesheet(this.__getStylesheet(url));
+    var that = this;
+
+    Object.each(n.rules, function(val, key) {
+      that.rules[key] = val;
+    });
+  },
   __createTag: function() {
     var tag = document.createElement("style");
     tag.type = "text/css";

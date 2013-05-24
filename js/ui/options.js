@@ -300,7 +300,7 @@ qwebirc.options.Options = [
       ui.setModifiableStylesheetValues(value, options["ui.fg_sec_color"].get(), options["ui.bg_color"].get());
     },
     isEnabled: function (session) {
-      return !conf.ui.simple_color;
+      return !conf.ui.simple_color && !conf.ui.adv_colors;
     }
   },
   {
@@ -312,7 +312,7 @@ qwebirc.options.Options = [
       ui.setModifiableStylesheetValues(options["ui.fg_color"].get(), value, options["ui.bg_color"].get());
     },
     isEnabled: function (session) {
-      return !conf.ui.simple_color;
+      return !conf.ui.simple_color && !conf.ui.adv_colors;
     }
   },
   {
@@ -331,6 +331,9 @@ qwebirc.options.Options = [
     },
     onCancel: function (session) {
       ui.setModifiableStylesheetValues(conf.ui.fg_color, conf.ui.fg_sec_color, conf.ui.bg_color);
+    },
+    isEnabled: function (session) {
+      return !conf.ui.adv_colors;
     }
   }
 ];

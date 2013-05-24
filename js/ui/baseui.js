@@ -300,9 +300,17 @@ qwebirc.ui.StandardUI = new Class({
   setModifiableStylesheet: function(name) {
     this.__styleSheet = new qwebirc.ui.style.ModifiableStylesheet(conf.frontend.static_base_url + "css/" + name + qwebirc.FILE_SUFFIX + ".mcss");
 
+    if (conf.ui.adv_colors)
+      this.__styleSheet.loadAdvanced(conf.frontend.static_base_url + "css/" + name + qwebirc.FILE_SUFFIX + ".prm");
+
     this.setModifiableStylesheetValues(conf.ui.fg_color, conf.ui.fg_sec_color, conf.ui.bg_color);
   },
   setModifiableStylesheetValues: function(fg_color, fg_sec_color, bg_color) {
+
+    if (conf.ui.adv_colors) {
+      this.__styleSheet.set();
+      return;
+    }
 
     var fg = new Color(fg_color);
     var fg_sec = new Color(fg_sec_color);
