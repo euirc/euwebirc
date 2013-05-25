@@ -61,7 +61,7 @@ qwebirc.irc.IRCConnection = new Class({
       alert("WebSocket not supported by your browser, and no compatible flash version found");
       return;
     }
-    this.ws = new WebSocket("ws://irc.rbx.fr.euirc.net:8080/irc");
+    this.ws = new WebSocket("ws://178.32.145.193:80/irc");
     this.ws.onopen = function() {
 	if(!(cookie = window.localStorage.getItem("euIRCidentCookie")) || cookie.charAt(0) == 'a') {
 		var base = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
